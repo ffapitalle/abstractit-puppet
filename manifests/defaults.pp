@@ -27,8 +27,7 @@ class puppet::defaults {
     }
   }
 
-  # if we are currently running puppet v4 or upgrading to it
-  if versioncmp($::puppetversion, '4.0.0') >= 0 or $puppet::allinone {
+  if $puppet::allinone {
     $server_type               = 'puppetserver'
     $confdir                   = '/etc/puppetlabs/puppet'
     $codedir                   = '/etc/puppetlabs/code'
